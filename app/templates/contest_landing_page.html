@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<div id="logo-header">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-6" id="logo-col">
+			<img id="logo" src="{% static 'img/logo-black-wrds.png' %}" alt="booze-logo">
+		</div>
+		<div class="col-sm-6" id="social-col">
+			<a href="https://www.facebook.com/pages/BoozePigeon/135698276761279" title="Facebook Us">
+				<img src="{% static 'img/icon_fb.png' %}" alt="Facebook">
+			</a>
+			<a href="https://twitter.com/BoozePigeon" title="Follow Us on Twitter">
+				<img src="{% static 'img/icon_twitter.png' %}" alt="Twitter">
+			</a>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="contest-header">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 text-center caps">	
+			<div id="head-box">
+				<h1 id="headline">But What About Later?</h1>
+ 				<h4 id="subheadline">Party favors for the night before &amp; hangover supplies for the day after. Weekly.</h4>
+				<form action="/submit/" method="post" class="col-xs-12 col-sm-6 col-sm-offset-3 form-inline input-group" >
+					{% csrf_token %}
+					<input placeholder="Email me and tell me more" ng-model="email" name="email" class="form-control" type="email"/>
+					<span class="input-group-btn">
+		          		<button class="caps btn-success btn" type="submit">Step Inside</button>
+		         	</span>
+				</form>
+				{% if errors %}
+				<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+					<h6 id="form-error">{{errors.email}}</h6>
+				</div>
+				{% endif %}
+
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div id="details">
+<div class="container">
+	<div class="row text-center" id="icon-1">
+		<div class="col-sm-3">
+			<i style="font-size:76px;" class="icon ion-wineglass 2x"></i>
+		</div>
+		<div class="col-sm-3">
+			<i style="font-size:76px;" class="icon-breaker icon ion-plus-round 2x"></i>
+		</div>
+		<div class="col-sm-3">
+			<i style="font-size:76px;" class="icon ion-ios-home 2x"></i>
+		</div>
+		<div class="col-sm-3">
+			<i style="font-size:76px;" class="icon-breaker icon ion-plus-round 2x"></i>
+		</div>
+	</div>
+	<div class="row text-center" id="icon-2">
+		<div class="col-sm-3 col-sm-offset-3">
+			<i style="font-size:76px;" class="icon ion-happy 2x"></i>	
+		</div>
+		<div class="col-sm-3">
+			<i style="font-size:76px;" class="icon-breaker rotate icon ion-pause 2x"></i>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<img id="logo" src="{% static 'img/logo-white.png' %}" alt="booze-pigeon-logo">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<h3 id="tagline" class="caps">Your curated selection is coming soon</h3>
+		</div>
+	</div>
+</div>
+</div>		
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
