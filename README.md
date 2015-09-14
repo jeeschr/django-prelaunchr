@@ -8,7 +8,7 @@ Run pip install -r requirements.txt in the folder. Run python manage.py runserve
 
 ## How it works ##
 
-Users are prompted to enter their email address to find out more about an upcoming product or service. Every user is given a unique referral code and tracked by ip address. The user is then taken to a page with which they may share their given referral code or see how they rank in terms of prize winning. Users must earn more referrals in order to win prizes. This application makes use of a few outside components: angularJS, templated_email, ipware, and facebook applications
+Users are prompted to enter their email address to find out more about an upcoming product or service. Every user is given a unique referral code and tracked by ip address. The user is then taken to a page with which they may share their given referral code or see how they rank in terms of prize winning. Users must earn more referrals in order to win prizes. This application makes use of a few outside components: templated_email, ipware, and facebook applications
 
 ## IP address tracking ##
 
@@ -20,7 +20,8 @@ Depending on whether you want to run this application in development or producti
 
 ## To do ##
 
-Should add a compress JS file to the gruntfile 
 Code needs to be cleaned up
+
 CSS needs to be fixed
+
 Settings file needs to be added 
