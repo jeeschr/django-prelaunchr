@@ -1,11 +1,25 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'), url(http://fonts.gstatic.com/s/montserrat/v6/zhcz-_WihjSQC0oHJ9TCYAzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat-Bold'), url(http://fonts.gstatic.com/s/montserrat/v6/IQHow_FEYlDC4Gzy_m8fcmaVI6zN22yiurzcBKxPjFE.woff2) format('woff2');
+}
+
+
 html, body {
     height: 100%;
 }
 
 body {
-    background-color: rgba(20, 20, 20, 0.6);
     background-color: black;
     font-family: 'Montserrat', sans-serif; 
+    font-weight: 400;
     overflow-x:hidden;
 }
 
@@ -51,15 +65,16 @@ body {
   color:white;
   margin-bottom: 40px;
   #head-box{
-    margin: 100px 0 100px 0;
+    margin: 170px 0 170px 0;
     padding: 0 20px 0 20px; 
 
      #headline {
-      margin-bottom: 30px; 
+      margin-bottom: 70px; 
     }
 
     form .btn, form input{
         height: 40px;
+        margin-top: 20px;
     }
 
    #form-error {
@@ -140,7 +155,6 @@ body {
   background-image: url("../img/friends-drinking.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  /*min-height: 60vh;*/
   background-position: right center;
   position: relative;
 
@@ -172,38 +186,21 @@ footer{
   bottom: 0;
   height: 30px;
   width: 100%;
+  padding-top: 10px;
 }
 #score-box {
-  background-color: white;
-  margin-bottom: 30px; }
-  #score-box .numref {
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 30px; 
+  .numref {
     color: #1478c8;
-    font-size: 1.4em; }
-  #score-box .highlight {
-    color: #c81464; }
+    font-size: 1.4em; 
+  }
+  .highlight {
+    color: #c81464; 
+  }
 
-.main-color-bg.btn:hover {
-  /*border-width: 0;*/ }
-
-/* thank you share us page */
-@media (max-width: 768px) {
-  #thank-banner h4,
-  #thank-banner h1 {
-    /*color:red;*/ }
-
-  #thank-banner {
-    /*padding-top: 0;*/ }
-
-  #thank-banner h1 {
-    /*padding-top: -10px;*/
-    /*font-size: 2em;*/ }
-
-  #thank-banner h4 {
-    /*top:-3px;*/
-    /*left:10px;*/ } }
-.social-share img:first-of-type {
-  /*background-color:red;*/ }
-
+}
 
 #prize-wrapper{
   padding-top: 30px;
@@ -604,12 +601,13 @@ footer{
   }
   .slider.slider-vertical .slider-track {
       cursor: default;
-      left: 20px;
+      left: 80px;
       position: absolute;
       top: 11px;
   }
   .sm_device .rewards-boxes .reward-box {
       margin-bottom: 5rem;
+      top: 90px;
   }
   .slider.slider-vertical {
       display: block;
@@ -698,3 +696,4 @@ footer{
   }
 
 }
+

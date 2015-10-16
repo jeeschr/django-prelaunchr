@@ -1,4 +1,4 @@
-{% block subject %}A Thanks for Signing Up{% endblock %}
+{% block subject %}Thanks for Signing Up{% endblock %}
 
 {% block html %}
 
@@ -13,7 +13,7 @@
 </head>
 
 <body style="margin: 0; padding: 0;">
-    <span style='font-size: 0; line-height: 0; height: 0; width: 0;'>You'll be first to know when we launch. Discover new cocktail mixers and up your pre-game. Tell your friends and drink for free.</span>
+    <span style='font-size: 0; line-height: 0; height: 0; width: 0;'>You'll be first to know when we launch.</span>
     <table width="100%" cellspacing='0' cellpadding='0' border="0" bgcolor="#ebebeb" style="background-color: #ebebeb; padding: 73px 15px; margin: 0;">
         <tr>
             <td align="center">
@@ -40,7 +40,7 @@
                     <tr>
                         <td style="padding: 22px 0 0;">
                             <center>
-                                <p>You'll be first to know when we launch. Discover new cocktail mixers and up your pre-game. Tell your friends and drink for free.</p>
+                                <p>You'll be first to know when we launch. Tell your friends and earn cool prizes.</p>
                             </center>
                         </td>
                     </tr>

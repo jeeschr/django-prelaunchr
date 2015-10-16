@@ -1,0 +1,6 @@
+*.pyc
+node_modules/
+bower_components/
+app/core/settings/prod.py
+app/db.sqlite3
+bower.json

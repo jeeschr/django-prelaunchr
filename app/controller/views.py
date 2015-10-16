@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from users.models import *
 from users.forms import ContestForm
-from django.http import JsonResponse
 from django.views.generic import View
+
 # USE FUNCTION get_real_ip FOR PROD
 from ipware.ip import get_real_ip, get_ip
 
@@ -73,11 +73,19 @@ class createUser(View):
 				try:
 					referred_by = User.objects.get(referral_code=ref)
 					if referred_by:
+
+						# increment referring users count
+						referring_user = User.objects.get(referral_code=ref)
+						referring_user.referrals += 1
+						referring_user.save()
+
+						# store referral codes in db
 						refer, newRefer = Referrer.objects.get_or_create(referral_code=ref)
 						user.referrer = refer
 						if referred_by.repeat_ip:
 							user.repeat_ip = True
 						user.save()
+						
 				except:
 					del request.session['h_ref']
 			return redirect('thanks-share-us')
@@ -93,28 +101,24 @@ def thanks_share_us(request):
 			user = User.objects.get(email=email)
 			if user:
 				ref = user.referral_code
-				try:
-					isreferrer = Referrer.objects.get(referral_code=ref)
-					if isreferrer:
-						numreferrals = User.objects.filter(referrer=isreferrer).count()
-						numentries = numreferrals + 2
-				except:
-					numreferrals = 0
-					numentries = 2
+				numreferrals = user.referrals
+				numentries = numreferrals + 2
+				if numentries >= 0:
+					width = 23
+				if numentries >= 5:
+					width = 33
+				if numentries >= 10:
+					width = 43
+				if numentries >= 15:
+					width = 63
 		except:
 			del request.session['h_email']
-			return render(request, 'contest_landing_page.html', {})
+			return redirect('contest-landing-page')
 	else:
-		return render(request, 'contest_landing_page.html', {})
+		return redirect('contest-landing-page')
 
 	return render(request, 'social_share_contest.html', {'ref_code': ref, 'referrals': numreferrals, 
-		'entries': numentries})
-
-
-
-
-
-
+		'entries': numentries, 'width': width})
 
 
 
