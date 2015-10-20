@@ -28,7 +28,7 @@
 	                		</div>
 
 
-                      <div style="left: 20%;" class="slider-tick round slider-tick-1 ">
+                      <div style="left: 20%;" class="{{true5}} slider-tick round slider-tick-1 ">
                         <span class="slider-top-label"></span>
                       
                           5
@@ -37,21 +37,21 @@
 
 
 
-                  <div style="left: 40%;" class="slider-tick round slider-tick-2">
+                  <div style="left: 40%;" class="{{true10}} slider-tick round slider-tick-2">
                         <span class="slider-top-label"></span>
                       
                           10
 
                       </div>
 
-                      <div style="left: 60%;" class="slider-tick round slider-tick-3 ">
+                      <div style="left: 60%;" class="{{true15}} slider-tick round slider-tick-3 ">
                         <span class="slider-top-label"></span>
                       
                           15
 
                       </div>
 
-                      <div style="left: 80%;" class="slider-tick round slider-tick-4">
+                      <div style="left: 80%;" class="{{true25}} slider-tick round slider-tick-4">
                         <span class="slider-top-label"></span>
                       
                           25
@@ -105,7 +105,7 @@
                               <span class="reward-head-text">
                                 10
                               </span>
-                              Previous + Lyft Coupon
+                              Awesome Lyft Coupon
                             </div>
                         </div>
                     </div> 
@@ -116,8 +116,7 @@
                               <span class="reward-head-text">
                                 15
                               </span>
-                                Previous + List of 10 Websites Only Drinkers Would Understand
-                               
+                                Top 10 Websites Only Drinkers Would Understand
                             </div>
                         </div>
                     </div> 
@@ -129,7 +128,7 @@
                               <span class="reward-head-text">
                                 25
                               </span>
-                               Previous + Handwritten Letter of Appreciation
+                               Handwritten Letter of Appreciation
                             </div>
                         </div>
                   </div> 
@@ -160,52 +159,55 @@
                 <div id="" class="slider slider-vertical slider-track-5 slider-disabled">
                   <div class="slider-track">
                     <div style="top: 0px; height: 0%;" class="slider-track-low"></div>
-                    <div style="top: 0%; height: 24%;" class="slider-selection tick-slider-selection"></div><div style="bottom: 0px; height: 76%;" class="slider-track-high"></div><div style="top: 0%;" class="slider-tick slider-tick-0 round in-selection"><span class="slider-top-label"></span>0</div><div style="top: 30%;" class="slider-tick slider-tick-1 round in-selection"><span class="slider-top-label"></span>5</div><div style="top: 53%;" class="slider-tick slider-tick-2 round"><span class="slider-top-label"></span>10</div><div style="top: 77%;" class="slider-tick slider-tick-3 round"><span class="slider-top-label"></span>15</div><div style="top: 100%;" class="slider-tick slider-tick-4 round"><span class="slider-top-label"></span>25</div><div style="top: 24%;" class="slider-handle min-slider-handle round"></div><div style="top: 0%;" class="slider-handle max-slider-handle round hide"></div></div>
-                <div style="left: 100%; top: 24%; margin-top: 0px;" class="tooltip tooltip-main right hide"><div class="tooltip-arrow"></div>
-                <div class="tooltip-inner">6</div></div>
-                <div style="left: 100%;" class="tooltip tooltip-min right hide">
+                    <div style="top: 0%; height: {{height}}%;" class="slider-selection tick-slider-selection"></div>
+                    <div style="bottom: 0px; height: 76%;" class="slider-track-high"></div>
+                    <div style="top: 0%;" class="slider-tick slider-tick-0 round in-selection">
+                      <span class="slider-top-label"></span>0</div>
+                      <div style="top: 25%;" class="slider-tick slider-tick-1 round {{true5}}">
+                        <span class="slider-top-label"></span>
+                      5</div>
+                      <div style="top: 50%;" class="{{true10}} slider-tick slider-tick-2 round">
+                        <span class="slider-top-label"></span>
+                        10
+                      </div>
+                      <div style="top: 75%;" class="{{true15}} slider-tick slider-tick-3 round">
+                        <span class="slider-top-label"></span>
+                        15
+                      </div>
+                      <div style="top: 100%;" class="{{true25}} slider-tick slider-tick-4 round">
+                        <span class="slider-top-label"></span>
+                        25
+                      </div>
+                      <div style="top: 4%;" class="slider-handle min-slider-handle round"></div>
+                      <div style="top: 0%;" class="slider-handle max-slider-handle round hide"></div>
+                  </div>
+              <div style="left: 100%; top: 24%; margin-top: 0px;" class="tooltip tooltip-main right hide">
                 <div class="tooltip-arrow"></div>
-                <div class="tooltip-inner"></div></div>
-                <div style="left: 100%;" class="tooltip tooltip-max right hide">
-                  <div class="tooltip-arrow"></div>
-                <div class="tooltip-inner"></div></div></div>
-                <input id="slider-track-vertical" style="display: none;" data="value: '6'" value="6" data-slider-enabled="false" data-slider-orientation="vertical" type="text">
+                <div class="tooltip-inner">6</div>
+              </div>
+              <div style="left: 100%;" class="tooltip tooltip-min right hide">
+                <div class="tooltip-arrow"></div>
+                <div class="tooltip-inner"></div>
+              </div>
+              <div style="left: 100%;" class="tooltip tooltip-max right hide">
+                <div class="tooltip-arrow"></div>
+                <div class="tooltip-inner"></div>
+              </div>
+              </div>
+                <input id="slider-track-vertical" style="display: none;" data="value: '6'" value="6" type="text">
               </div>
               <div class="col-xs-7 right">
                 <div class="row rewards-boxes">
                 
 
-                
-                
-                
-                
-
-                
-
-                
-
-                
-<!-- 
-                <div class="col-lg-2 reward-box reward-box-1 reward-earned" data-rewardlevel="0">
+                <div class="no-opacity col-lg-2 reward-box reward-box-1 reward-earned">
                   <div class="panel panel-default">
                     <div class="panel-body">
                       <span class="reward-head-text">0</span>
                     Prize Level
                     </div>
                   </div>
-                </div> -->
-
-                
-                
-                
-                
-                
-
-                
-
-                
-
-                
+                </div>
 
                 <div class="col-lg-2 col-lg-offset-0 reward-box reward-box-2 reward-earned">
                   <div class="panel panel-default">
@@ -217,22 +219,12 @@
                 </div>
 
                 
-                
-                
-                
-                
-
-                
-
-                
-
-                
 
                 <div class="col-lg-2 reward-box reward-box-3">
                   <div class="panel panel-default">
                     <div class="panel-body">
                       <span class="reward-head-text">10</span>
-                    Prize Level
+                    Awesome Lyft Discount Code
                     </div>
                   </div>
                 </div>
@@ -242,7 +234,7 @@
                   <div class="panel panel-default">
                     <div class="panel-body">
                       <span class="reward-head-text">15</span>
-                    Prize Level
+                    10 Websites Only Drinkers Would Understand
                     </div>
                   </div>
                 </div>
@@ -252,14 +244,12 @@
                   <div class="panel panel-default">
                     <div class="panel-body">
                       <span class="reward-head-text">25</span>
-                      Prize Here
+                      Handwritten Letter of Appreciation
                     </div>
                   </div>
                 </div>
 
-                
-                
-
+              
                 </div>
               </div>
 
@@ -268,6 +258,6 @@
       </div>
     </div>
   
-
-
 </div>
+
+

@@ -12,12 +12,13 @@ from templated_email import send_templated_mail
 
 def contest_landing_page(request,ref=None):
 
+	# redirect to referral page is user has already signed up
 	if 'h_email' in request.session:
 		email = request.session['h_email']
 		try:
 			user = User.objects.get(email=email)
-			# if user:
-			# 	return redirect('thanks-share-us')
+			if user:
+				return redirect('thanks-share-us')
 		except:
 			del request.session['h_email']	
 	if ref:
@@ -28,10 +29,13 @@ def contest_landing_page(request,ref=None):
 				request.session.set_expiry(600000)
 		except:
 			pass
-	else:
-		ref = ''
-	return render(request, 'contest_landing_page.html', {'ref_code':ref})
+	# if 'form_data' in request.session:
+	# 	form_errors = request.session['form_data']
+	# else:
+	# 	form_errors='' 
 
+	# return render(request, 'contest_landing_page.html', {'errors': form_errors})
+	return render(request, 'contest_landing_page.html', {})
 class createUser(View):
 
 	def post(self, request):
@@ -90,9 +94,16 @@ class createUser(View):
 					del request.session['h_ref']
 			return redirect('thanks-share-us')
 		else:
-			return render(request, 'contest_landing_page.html', {'errors': form.errors})
+			# request.session['form_data'] = form.errors['email'][0]
+			# return redirect('contest-landing-page')
+			return render(request, 'contest_landing_page.html', {'errors': form.errors['email']})
 
 def thanks_share_us(request):
+
+	true5 = ''
+	true10 = ''
+	true15 = ''
+	true25 = ''
 
 	if 'h_email' in request.session:
 		email = request.session['h_email']
@@ -105,12 +116,22 @@ def thanks_share_us(request):
 				numentries = numreferrals + 2
 				if numentries >= 0:
 					width = 23
+					height = 23
 				if numentries >= 5:
-					width = 33
+					width = 44
+					height = 47
+					true5 = 'in-selection'
 				if numentries >= 10:
-					width = 43
+					width = 63
+					height = 75
+					true10 = 'in-selection'
 				if numentries >= 15:
 					width = 63
+					height = 100
+					true15 = 'in-selection'
+				if numentries >= 25:
+					width = 100
+					true25 = 'in-selection'
 		except:
 			del request.session['h_email']
 			return redirect('contest-landing-page')
@@ -118,7 +139,7 @@ def thanks_share_us(request):
 		return redirect('contest-landing-page')
 
 	return render(request, 'social_share_contest.html', {'ref_code': ref, 'referrals': numreferrals, 
-		'entries': numentries, 'width': width})
+		'entries': numentries, 'width': width, 'height':height,'true5':true5, 'true10':true10, 'true15':true15,'true25':true25})
 
 
 
