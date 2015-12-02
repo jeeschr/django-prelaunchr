@@ -42,8 +42,7 @@ The css is still a little funny for the mobile view. The prize progress does not
 
 ## Credits ##
 
-[django-ipware](https://github.com/un33k/django-ipware)
-
-[django-templated-email](https://github.com/BradWhittington/django-templated-email)
+*[django-ipware](https://github.com/un33k/django-ipware)
+*[django-templated-email](https://github.com/BradWhittington/django-templated-email)
 
 
