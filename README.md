@@ -2,6 +2,8 @@
 
 Test the market before launch by running an email collection campaign. Users can refer friends using a unique referral code and earn prizes. This application is based on the likes of [Harry's Prelaunchr](https://github.com/harrystech/prelaunchr) and websites such as [Kickofflabs](https://kickofflabs.com/).
 
+[See it in action](http://www.boozepigeon.com)
+
 ## How it works ##
 
 Users are prompted to enter their email address. This generates a unique referral code, saves the ip address, and creates a cookie-based session. 
@@ -39,6 +41,8 @@ A Facebook application ID needs to be setup in both the templates/social_share_c
 The css is still a little funny for the mobile view. The prize progress does not display correctly for that case.
 
 ## Credits ##
+
 [django-ipware](https://github.com/un33k/django-ipware)
 [django-templated-email](https://github.com/BradWhittington/django-templated-email)
+
 
