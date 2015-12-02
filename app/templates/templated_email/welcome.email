@@ -1,3 +1,5 @@
+{# NEED TO CONFIGURE FACEBOOK SHARING #}
+
 {% block subject %}Thanks for Signing Up{% endblock %}
 
 {% block html %}
@@ -82,8 +84,21 @@
                         <td style="padding: 45px 0 43px;">
                             <table style="margin: 0 auto; padding: 0; width: 200px; font-family: 'Helvetica Neue-Light', 'Helvetica Neue Light', 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif; font-size: 0; color: #CCC; font-weight: normal; background: white; text-align: center;" width='200' cellspacing='0' cellpadding='0' align="center" bgcolor="#FFFFFF">
                                 <tr>
+                            
+
+
+
+
+
+                            <!-- FACEBOOK SHARE APP ID -->
+
+
+
+
+
+
                                     <td width="80" align="right">
-                                        <a href="https://www.facebook.com/dialog/share?app_id=874222456004293&amp;display=popup&amp;redirect_uri=http://www.facebook.com/&amp;href=http%3A%2F%2Fwww.boozepigeon.com/{{ref_code}}/&amp;title=Booze Pigeon" style="outline: 0; border: 0;" target="_blank">
+                                        <a href="https://www.facebook.com/dialog/share?app_id=123123123123123&amp;display=popup&amp;redirect_uri=http://www.facebook.com/&amp;href=http%3A%2F%2Fwww.boozepigeon.com/{{ref_code}}/&amp;title=Booze Pigeon" style="outline: 0; border: 0;" target="_blank">
                                             <img src="http://www.boozepigeon.com/static/img/icon_fb.png" alt="Share on Facebook" style="display: block; margin: 0; padding: 0; border: 0;">
                                         </a>
                                     </td>

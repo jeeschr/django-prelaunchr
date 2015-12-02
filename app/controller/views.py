@@ -7,7 +7,6 @@ from django.views.generic import View
 from ipware.ip import get_real_ip, get_ip
 
 from django.conf import settings
-from django.core.mail import send_mail
 from templated_email import send_templated_mail
 
 def contest_landing_page(request,ref=None):
@@ -29,20 +28,23 @@ def contest_landing_page(request,ref=None):
 				request.session.set_expiry(600000)
 		except:
 			pass
-	# if 'form_data' in request.session:
-	# 	form_errors = request.session['form_data']
-	# else:
-	# 	form_errors='' 
-
-	# return render(request, 'contest_landing_page.html', {'errors': form_errors})
 	return render(request, 'contest_landing_page.html', {})
+
 class createUser(View):
 
 	def post(self, request):
 		form = ContestForm(request.POST)
 		if form.is_valid():
-			userEmail = request.POST['email']
-			user = User.objects.create(email=userEmail)
+			userEmail = form.cleaned_data['email']
+
+			request.session['h_email'] = userEmail
+			request.session.set_expiry(800000)
+
+			# USE FUNCTION get_real_ip FOR PROD, get_ip FOR DEV
+			ip=get_ip(request)
+			# ip=get_real_ip(request)	
+			user = User.objects.create(email=userEmail, ip_address=ip)
+
 
 			# CONFIGURE TO SEND EMAIL
 			# send_templated_mail(
@@ -54,14 +56,7 @@ class createUser(View):
 		 #        }
 			# )
 
-			request.session['h_email'] = userEmail
-			request.session.set_expiry(800000)
-			
 
-			# USE FUNCTION get_real_ip FOR PROD, get_ip FOR DEV
-			ip=get_ip(request)
-			# ip=get_real_ip(request)	
-			
 			# returns True if new obj newIP is created
 			curr_ip, newIP = IP_Address.objects.get_or_create(address=ip)
 			if newIP:
@@ -92,10 +87,9 @@ class createUser(View):
 						
 				except:
 					del request.session['h_ref']
+					
 			return redirect('thanks-share-us')
 		else:
-			# request.session['form_data'] = form.errors['email'][0]
-			# return redirect('contest-landing-page')
 			return render(request, 'contest_landing_page.html', {'errors': form.errors['email']})
 
 def thanks_share_us(request):

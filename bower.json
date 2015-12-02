@@ -1,9 +1,8 @@
 {
-  "name": "cocktails",
+  "name": "django-prelauncher",
   "version": "0.0.1",
   "dependencies": {},
   "private": true,
   "devDependencies": {
-    "bootstrap": "~3.3.5"
   }
 }

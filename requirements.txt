@@ -1,4 +1,4 @@
 Django==1.8.3
+django-ipware==1.1.0
+-e git+https://github.com/BradWhittington/django-templated-email.git@b993f2d3562fca490dc19a2607dc4e3ea6878917#egg=django_templated_email-master
 wsgiref==0.1.2
-django-templated-email
-django-ipware
